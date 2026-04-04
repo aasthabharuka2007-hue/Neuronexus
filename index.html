@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    
+    <!-- Android App Core System Constraints -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#0f172a">
+    <link rel="apple-touch-icon" href="icon.png">
+    
+    <title>Neuronexus App</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header class="app-header">
+        <div class="header-content">
+            <div>
+                <h1><i class="fa-solid fa-bolt"></i> Neuronexus</h1>
+                <p>Curated AI-Summarized Headlines</p>
+            </div>
+            <div class="lang-controls">
+                <i class="fa-solid fa-globe"></i>
+                <select id="lang-selector">
+                    <option value="en">English</option>
+                    <option value="hi">हिंदी (Hindi)</option>
+                    <option value="mr">मराठी (Marathi)</option>
+                    <option value="ja">日本語 (Japanese)</option>
+                </select>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- App Tabs -->
+        <div class="app-tabs">
+            <button class="tab-btn active" data-tab="news-tab-view"><i class="fa-solid fa-newspaper"></i> Live News</button>
+            <button class="tab-btn" data-tab="media-tab-view"><i class="fa-solid fa-camera-retro"></i> Analyze Media</button>
+        </div>
+
+        <div id="news-tab-view">
+            <!-- Mood Selector -->
+            <section class="mood-selector" id="mood-selector">
+            <button class="mood-btn active" data-mood="">🌐 Top Headlines</button>
+            <button class="mood-btn" data-mood="happy">😃 Happy</button>
+            <button class="mood-btn" data-mood="chill">😌 Chill</button>
+            <button class="mood-btn" data-mood="curious">🤔 Curious</button>
+            <button class="mood-btn" data-mood="ambitious">🚀 Ambitious</button>
+        </section>
+
+        <div id="loader" class="loader">
+            <div class="spinner"></div>
+            <p>Fetching top headlines...</p>
+        </div>
+
+        <div id="news-grid" class="news-grid hidden">
+            <!-- News Cards will be injected here -->
+        </div>
+        </div> <!-- End news-tab-view -->
+
+        <!-- Media Analyzer View -->
+        <div id="media-tab-view" class="hidden">
+            <div class="upload-container">
+                <div class="upload-box" id="upload-box">
+                    <i class="fa-solid fa-cloud-arrow-up fa-3x"></i>
+                    <h3>Drag & Drop Photo or Video</h3>
+                    <p>or click to browse from your device</p>
+                    <input type="file" id="media-upload" accept="image/*,video/*" hidden>
+                </div>
+                <div id="media-preview-box" class="hidden"></div>
+                <div style="display: flex; gap: 1rem; width: 100%; margin-top: 1rem;">
+                    <button class="btn btn-ai" id="btn-analyze-media" disabled style="flex: 2; padding: 1rem;">
+                        <i class="fa-solid fa-brain"></i> Analyze Media Context
+                    </button>
+                    <button class="btn" id="btn-delete-media" disabled style="flex: 1; padding: 1rem; background: transparent; border-color: #ef4444; color: #ef4444;">
+                        <i class="fa-solid fa-trash"></i> Delete
+                    </button>
+                </div>
+                <div id="media-analysis-result" class="news-summary-box hidden" style="margin-top: 1.5rem; text-align: left;"></div>
+            </div>
+        </div>
+
+        <!-- Global Audio Player -->
+        <div id="audio-container" class="audio-container hidden">
+            <p id="audio-status">Currently Playing...</p>
+            <audio id="global-audio-player" controls autoplay></audio>
+        </div>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>
