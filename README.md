@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # AI Voice News Reader
 
 Production-style full-stack app: **NewsAPI** headlines, **Google Gemini** (default) or **OpenAI** for summaries / vision / video transcription, **OpenAI TTS** (optional MP3) with browser fallback, **ffmpeg** for video audio extract, and **SQLite** for preferences and history.
@@ -102,3 +103,17 @@ For production, set `VITE_API_URL` to your API origin and configure `CORS_ORIGIN
 ## License
 
 MIT (adjust as needed for your use case).
+=======
+# Neuronexus
+
+## About
+This project was built using an Antigravity-hosted ML model.
+
+## Status
+⚠️ The model endpoint has expired and is no longer active.
+
+## Next Steps
+- Rebuild or redeploy the model
+- Upload model files or code
+- Connect a permanent API
+>>>>>>> f873223246b40cd9988f8871ed8790a0f5cb3c1e
