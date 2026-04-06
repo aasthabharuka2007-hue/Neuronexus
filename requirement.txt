@@ -1,0 +1,9 @@
+fastapi
+uvicorn
+requests
+openai
+gtts
+deep-translator
+opencv-python-headless
+transformers
+pillow
